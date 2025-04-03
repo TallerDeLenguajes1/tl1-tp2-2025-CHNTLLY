@@ -1,0 +1,12 @@
+¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+No, no se puede ver el archivo tp2_1_2.c porque fue creado en una rama distinta a la principal,
+al movernos a la rama principal, los commits añadidos en las ramas secundarias no aparecerán hasta 
+haber juntado las ramas (merge)
+
+En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+Se puede ver como se agrega "Respuestas.txt" a la rama principal mientras que este archivo no existe en
+la rama secundaría, la extension git graph ayuda a entender mejor este concepto
+
+En VSCode vuelva al “Source Control” vea los cambios, ¿Qué nota?
+Luego de realizar el merge se ve como los cambios realizados en la rama secundaria se incorporan a la rama
+principal.
