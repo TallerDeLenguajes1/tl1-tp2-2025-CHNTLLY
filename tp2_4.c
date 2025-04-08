@@ -14,6 +14,8 @@ void listarPCs(struct compu pcs[], int cantidad);
 
 void mostrarMasVieja(struct compu pcs[], int cantidad);
 
+void mostrarMasVeloz(struct compu pcs[], int cantidad);
+
 
 int main()
 {
@@ -30,6 +32,7 @@ int main()
     };
     listarPCs(PC,5);
     mostrarMasVieja(PC,5);
+    mostrarMasVeloz(PC,5);
 }
 
 
@@ -58,6 +61,24 @@ void mostrarMasVieja(struct compu pcs[], int cantidad)
         }
     }
     printf("PC mas vieja encontrada:\n");
+    printf("PC numero %d:\n",indice+1);
+    printf("Anio: %d  --  Cantidad de nucleos: %d  --  Velocidad: %d Ghz\nTipo de procesador: ", pcs[indice].anio,pcs[indice].cantidad_nucleos,pcs[indice].velocidad);
+    puts(pcs[indice].tipo_cpu);
+    printf("\n\n");
+};
+
+void mostrarMasVeloz(struct compu pcs[], int cantidad)
+{
+    int mayor=0,indice=0; //preparo la variable donde se alamcenara el indice de la compu mas veloz
+    for(int i=0; i< cantidad; i++)
+    {
+        if(pcs[i].velocidad>mayor)
+        {
+            mayor = pcs[i].velocidad;
+            indice=i;
+        }
+    }
+    printf("PC mas veloz encontrada:\n");
     printf("PC numero %d:\n",indice+1);
     printf("Anio: %d  --  Cantidad de nucleos: %d  --  Velocidad: %d Ghz\nTipo de procesador: ", pcs[indice].anio,pcs[indice].cantidad_nucleos,pcs[indice].velocidad);
     puts(pcs[indice].tipo_cpu);
