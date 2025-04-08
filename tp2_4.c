@@ -12,6 +12,7 @@ struct compu{
 
 void listarPCs(struct compu pcs[], int cantidad);
 
+void mostrarMasVieja(struct compu pcs[], int cantidad);
 
 
 int main()
@@ -27,7 +28,8 @@ int main()
         PC[i].cantidad_nucleos = 1 + rand() % (8 - 1 + 1);
         PC[i].tipo_cpu = tipos[random];
     };
-    listarPCs(PC,3);
+    listarPCs(PC,5);
+    mostrarMasVieja(PC,5);
 }
 
 
@@ -41,4 +43,23 @@ void listarPCs(struct compu pcs[], int cantidad)
         puts(pcs[i].tipo_cpu);
         printf("\n\n");
     };
+};
+
+
+void mostrarMasVieja(struct compu pcs[], int cantidad)
+{
+    int menor=2030,indice=0; //preparo la variable donde se almacena el indice de la compu mas vieja
+    for(int i=0; i< cantidad; i++)
+    {
+        if(pcs[i].anio<menor)
+        {
+            menor = pcs[i].anio;
+            indice=i;
+        }
+    }
+    printf("PC mas vieja encontrada:\n");
+    printf("PC numero %d:\n",indice+1);
+    printf("Anio: %d  --  Cantidad de nucleos: %d  --  Velocidad: %d Ghz\nTipo de procesador: ", pcs[indice].anio,pcs[indice].cantidad_nucleos,pcs[indice].velocidad);
+    puts(pcs[indice].tipo_cpu);
+    printf("\n\n");
 };
